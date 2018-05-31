@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Cookies</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<p>Set Cookies:</p>
+<table>
+    <thead>
+    <tr>
+        <td>name</td>
+        <td>value</td>
+        <td>domain</td>
+        <td>path</td>
+        <td>secure</td>
+        <td>httpOnly</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${defaultCookies}">
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.value}"></td>
+        <td th:text="${c.domain}"></td>
+        <td th:text="${c.path}"></td>
+        <td th:text="${c.secure}"></td>
+        <td th:text="${c.httpOnly}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><a href="checkCookies">Check Cookies</a></p>
+</body>
+</html>

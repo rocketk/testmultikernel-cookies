@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Cookies</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<p>Default Cookies:</p>
+<table>
+    <thead>
+    <tr>
+        <td>name</td>
+        <td>value</td>
+        <td>domain</td>
+        <td>path</td>
+        <td>secure</td>
+        <td>httpOnly</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${defaultCookies}">
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.value}"></td>
+        <td th:text="${c.domain}"></td>
+        <td th:text="${c.path}"></td>
+        <td th:text="${c.secure}"></td>
+        <td th:text="${c.httpOnly}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Cookies From Request:</p>
+<table>
+    <thead>
+    <tr>
+        <td>name</td>
+        <td>value</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${requestCookies}">
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p>Cookies That Lost:</p>
+<table>
+    <thead>
+    <tr>
+        <td>name</td>
+        <td>value</td>
+        <td>domain</td>
+        <td>path</td>
+        <td>secure</td>
+        <td>httpOnly</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${lostCookies}">
+        <td th:text="${c.name}"></td>
+        <td th:text="${c.value}"></td>
+        <td th:text="${c.domain}"></td>
+        <td th:text="${c.path}"></td>
+        <td th:text="${c.secure}"></td>
+        <td th:text="${c.httpOnly}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<p><a href="index">Return To Index</a></p>
+
+</body>
+</html>
